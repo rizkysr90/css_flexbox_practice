@@ -27,6 +27,84 @@ body {
   background-size: cover;
   min-height: 100vh; }
 
+.logo {
+  height: 4.25rem;
+  margin-left: 4.25rem; }
+
+.search {
+  flex: 0 0 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .search__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    width: 90%;
+    border: none;
+    background-color: var(--color-gray-light-2);
+    padding: .8rem 1.7rem;
+    border-radius: 10rem;
+    margin-right: -3.25rem;
+    overflow: hidden;
+    transition: all .3s;
+    outline: var(--color-gray-dark-3) solid 0.5px; }
+    .search__input:focus {
+      width: 100%;
+      outline: var(--color-primary-light) solid 0.5px;
+      background-color: var(--color-gray-light-3); }
+  .search__input:focus + .search__button {
+    background-color: var(--color-gray-light-3); }
+  .search__button {
+    cursor: pointer;
+    border: none;
+    background-color: var(--color-gray-light-2); }
+    .search__button:active {
+      transform: translateY(2px); }
+  .search__icon {
+    height: 2rem;
+    width: 2rem; }
+
+.user-nav {
+  display: flex;
+  align-self: stretch; }
+  .user-nav > * {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center; }
+  .user-nav > *:hover {
+    color: var(--color-gray-light-1);
+    cursor: pointer;
+    background-color: var(--color-primary-light); }
+  .user-nav__icon-box {
+    position: relative;
+    color: var(--color-primary-light); }
+    .user-nav__icon-box:hover {
+      color: var(--color-gray-light-1); }
+  .user-nav__icon {
+    height: 2.8rem;
+    width: 2.8rem;
+    fill: currentColor; }
+  .user-nav__notification {
+    position: absolute;
+    top: 1.3rem;
+    right: 1.3rem;
+    color: var(--color-gray-light-1);
+    background-color: var(--color-gray-dark-1);
+    border-radius: 10rem;
+    height: 1.75rem;
+    padding: 1rem;
+    width: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .user-nav__user-photo {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    margin-right: 1.6rem;
+    border: 2px solid currentColor; }
+
 .container {
   width: 75%;
   margin: 8rem auto;
@@ -36,7 +114,11 @@ body {
 
 .header {
   height: 7rem;
-  background-color: var(--color-gray-light-2);
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-gray-light-1);
   box-shadow: var(--shadow-header); }
 
 .content {
