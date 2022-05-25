@@ -17,14 +17,20 @@
 }
 .content {
     display: flex;
+    
     .sidebar {
         flex: 0 0 22%;
+        color: var(--color-gray-light-4);
         // height: 100vh;
         background-color: var(--color-gray-dark-1);
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
     }
     .hotel-view {
         flex: 1;
-
+        // Testing
+        min-height: 100vh;
         background-color: orangered;
     }
 }
