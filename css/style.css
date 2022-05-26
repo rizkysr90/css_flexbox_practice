@@ -20,7 +20,7 @@ html {
 body {
   line-height: 1.6;
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--color-gray-dark-2);
   background-image: linear-gradient(to bottom right, var(--color-primary), var(--color-primary-dark));
   background-repeat: no-repeat;
@@ -150,6 +150,82 @@ body {
   text-align: center;
   padding: 2.5rem; }
 
+.gallery {
+  display: flex;
+  background-color: red; }
+  .gallery__item {
+    margin: 0; }
+  .gallery__photo {
+    width: 100%;
+    display: block; }
+
+.overview {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-gray-dark-2); }
+  .overview__heading {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--color-gray-dark-1);
+    padding: 1.2rem 3rem;
+    margin-right: -1rem;
+    letter-spacing: 1px; }
+  .overview__stars {
+    margin-right: auto;
+    display: flex; }
+  .overview__icon-star, .overview__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary); }
+  .overview__icon-location {
+    margin-right: .5rem; }
+  .overview__location {
+    font-size: 1.3rem;
+    display: flex; }
+  .overview__rating {
+    color: var(--color-gray-light-1);
+    align-self: stretch;
+    padding: 0 2.25rem;
+    margin-left: 2.5rem;
+    background-color: var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+  .overview__rating-average {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: -4px; }
+  .overview__rating-count {
+    font-size: 1.3rem; }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+    box-shadow: none; }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0.8rem 3.5rem rgba(0, 0, 0, 0.25); }
+  100% {
+    transform: scale(1);
+    box-shadow: none; } }
+
+.btn-inline {
+  border: none;
+  cursor: pointer;
+  color: var(--color-primary);
+  background-color: transparent;
+  border-bottom: 1px solid currentColor;
+  font-size: inherit;
+  transition: all .3s; }
+  .btn-inline:hover {
+    color: var(--color-gray-dark-1); }
+  .btn-inline:focus {
+    outline: none;
+    animation: pulsate 1s infinite; }
+
 .container {
   width: 75%;
   margin: 8rem auto;
@@ -164,7 +240,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: var(--color-gray-light-1);
-  box-shadow: var(--shadow-header); }
+  border-bottom: 1px solid var(--color-gray-dark-2); }
 
 .content {
   display: flex; }
@@ -177,5 +253,4 @@ body {
     justify-content: space-between; }
   .content .hotel-view {
     flex: 1;
-    min-height: 100vh;
-    background-color: orangered; }
+    min-height: 100vh; }

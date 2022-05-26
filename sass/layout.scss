@@ -13,7 +13,9 @@
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-gray-light-1);
-    box-shadow: var(--shadow-header);
+    // box-shadow: var(--shadow-header);
+    border-bottom: 1px solid var(--color-gray-dark-2);
+
 }
 .content {
     display: flex;
@@ -31,6 +33,6 @@
         flex: 1;
         // Testing
         min-height: 100vh;
-        background-color: orangered;
+        // background-color: orangered;
     }
 }
