@@ -18,13 +18,24 @@
 
     --line: 1px solid var(--color-gray-dark-2);
 }
+$bp-1100: 68.75em;
+$bp-850: 53.125em;
+$bp-700: 43.75em;
+$bp-550: 34.375em;
+
+
 *,*::before,*::after {
     box-sizing: border-box;
 }
 html {
     font-size: 62.5%;
+
+    @media only screen and (max-width: $bp-850) {
+        font-size: 50%;
+    }
 }
 body {
+    margin: 0;
     line-height: 1.6;
     font-weight: 400;
     font-size: 1.6rem;

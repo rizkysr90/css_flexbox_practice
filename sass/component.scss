@@ -1,17 +1,30 @@
 .logo {
     height: 4.25rem;
     margin-left: 4.25rem;
+    @media only screen and (max-width: $bp-550){
+        margin-left: 2rem;
+        margin-right: auto;
+    }
+    
 }
 
 // Search
 .search {
+    @media only screen and (max-width: $bp-550){
+        order: 1;
+        flex: 0 0 100%;
+    }
     flex: 0 0 40%;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     align-items: center;
     // background-color: red;
     &__input {
-
+        @media only screen and (max-width: $bp-550){
+            width: 100%;
+            margin-right: -4.25rem;
+            padding: 1rem 1.7rem;
+        }
         font-family: inherit;
         font-size: inherit;
         color: var(--color-gray-dark-1);
@@ -50,6 +63,7 @@
         }
     }
     &__icon {
+       
         height: 2rem;
         width: 2rem;
     }
@@ -59,12 +73,17 @@
     // background-color: goldenrod;
     // color: var(--color-gray-light-1);
     display: flex;
+
     align-self: stretch;
+  
 
     & > * {
         padding: 0 2rem;
         display: flex;
         align-items: center;
+        @media only screen and (max-width: $bp-550){
+            padding: 1.5rem 2rem;
+        }
     }
     & > *:hover {
         color: var(--color-gray-light-1);
@@ -81,12 +100,17 @@
        
     }
     &__icon {
+        @media only screen and (max-width: $bp-550){
+            height: 3.8rem;
+            width: 3.8rem;
+        }
         height: 2.8rem;
         width: 2.8rem;
         fill: currentColor;
 
     }
     &__notification {
+       
         position: absolute;
         top: 1.3rem;
         right: 1.3rem;
@@ -109,7 +133,18 @@
     &__user:hover {
         color: #fff;
     }
+    &__user-name {
+        @media only screen and (max-width: $bp-550){
+            display: none;
+        }
+    }
     &__user-photo {
+
+        @media only screen and (max-width: $bp-550){
+            // height: 4rem;
+            // width: 4rem;
+            margin-right: 0;
+        }
         height: 5rem;
         width: 5rem;
         border-radius: 50%;
@@ -120,16 +155,27 @@
 }
 // Sidenav
 .side-nav {
+    @media only screen and (max-width: $bp-700){
+        margin: 0;
+        display: flex;
+    }
     margin-top: 5rem;
     list-style: none;
     padding: 0;
     &__item {
+        @media only screen and (max-width: $bp-700){
+            flex: 1;
+        }
         // background-color: white;
         color: var(--color-gray-light-3);
         position: relative;
         // color: red;
         &:not(:last-child) {
             margin-bottom: 1.5rem;
+
+            @media only screen and (max-width: $bp-700){
+                margin: 0;                
+            }
         }
         &::before {
             position: absolute;
@@ -158,6 +204,17 @@
 
         &:link,
         &:visited {
+            @media only screen and (max-width: $bp-700){
+                justify-content: center;
+                padding: 2rem 3rem;
+            }
+            @media only screen and (max-width: $bp-550) {
+                flex-direction: column;
+                padding: 1rem 2.5rem;
+            }
+            @media only screen and (max-width: $bp-550){
+                padding: 1rem;
+            }
             position: relative;
             z-index: 2;
             color: inherit;
@@ -173,6 +230,12 @@
 
     }
     &__icon {
+        @media only screen and (max-width: $bp-550) {
+            margin-right: 0;
+            width: 2rem;
+            height: 2rem;
+        }
+        
         width: 2.8rem;
         height: 2.8rem;
         margin-right: 1.5rem;
@@ -182,30 +245,50 @@
 }
 // Legal Text 
 .legal {
+    @media only screen and (max-width: $bp-700){
+        display: none;
+    }
     font-size: 1.2rem;
     text-align: center;
     padding: 2.5rem;
 }
 // Gallery
 .gallery {
+    @media only screen and (max-width: $bp-550) {
+       height: 20rem;
+    }
     display: flex;
     background-color: red;
     &__item {
         margin: 0;
     }
     &__photo {
+        @media only screen and (max-width: $bp-550) {
+            height: 100%;
+            object-fit: cover;
+         }
         width: 100%;
         display: block;
     }
 }
 // Overview
 .overview {
+    @media only screen and (max-width: $bp-550) {
+      flex-wrap: wrap;
+    }
     display: flex;
     // background-color: orangered;
     align-items: center;
-    
     border-bottom: var(--line);
     &__heading {
+        @media only screen and (max-width: $bp-550) {
+            flex: 0 0 100%;
+            text-align: center;
+            padding: 1.5rem 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            border: var(--line);
+        }
         margin: 0;
         font-size: 2.5rem;
         font-weight: 300;
@@ -216,12 +299,19 @@
         letter-spacing: 1px;
     }
     &__stars {
+        @media only screen and (max-width: $bp-550) {
+            margin-left: 1.5rem;
+        }
         margin-right: auto;
         display: flex;
         // background-color: blueviolet;
     }
     &__icon-star,
     &__icon-location {
+        @media only screen and (max-width: $bp-550) {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
         width: 1.75rem;
         height: 1.75rem;
         fill: var(--color-primary);
@@ -232,10 +322,15 @@
     &__location {
         font-size: 1.3rem;
         display: flex;
+        align-items: center;
         // background-color: blueviolet;
         
     }
     &__rating {
+        @media only screen and (max-width: $bp-550) {
+            padding: 0 1.8rem;
+            margin-left: 1.8rem;
+        }
         color: var(--color-gray-light-1);
         align-self: stretch;
         padding: 0 2.25rem;
@@ -364,6 +459,12 @@
 }
 // Review
 .review {
+    @media only screen and (max-width: $bp-550){
+        padding: 2rem;
+        margin-bottom: 2rem;
+
+    }
+  
     overflow: hidden;
     position: relative;
     margin: 0;
@@ -419,6 +520,9 @@
 }
 // CTA
 .cta {
+    @media only screen and (max-width: $bp-550){
+        padding: 2rem;
+    }
     text-align: center;
     padding: 3.5rem 0;
     &__book-now {
