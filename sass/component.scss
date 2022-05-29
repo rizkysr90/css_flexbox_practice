@@ -133,6 +133,14 @@
     &__user:hover {
         color: #fff;
     }
+    &__user-active {
+        display: none;
+    }
+    &__user:focus > &__user-active {
+        display: block;
+        background-color: red;
+    }   
+    
     &__user-name {
         @media only screen and (max-width: $bp-550){
             display: none;
@@ -165,6 +173,9 @@
     &__item {
         @media only screen and (max-width: $bp-700){
             flex: 1;
+        }
+        &--active {
+            background-color: var(--color-primary);
         }
         // background-color: white;
         color: var(--color-gray-light-3);
@@ -261,6 +272,7 @@
     background-color: red;
     &__item {
         margin: 0;
+        position: relative;
     }
     &__photo {
         @media only screen and (max-width: $bp-550) {
@@ -269,7 +281,34 @@
          }
         width: 100%;
         display: block;
+        height: auto;
     }
+    &__overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        color: #fff;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 25%;
+        width: 100%;
+        opacity: 0;
+        transition: all .3s ease;
+        // background-color: var(--color-primary);
+        background-color: rgba($color: $color-primary , $alpha: .7);
+       
+    }
+    &__overlay-text {
+        display: block;
+        font-size: 1.8rem;
+        
+    }
+    &__item:hover  &__overlay {
+        opacity: 1;
+    }
+
 }
 // Overview
 .overview {

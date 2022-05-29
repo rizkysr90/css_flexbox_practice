@@ -128,6 +128,11 @@ body {
     color: var(--color-primary); }
   .user-nav__user:hover {
     color: #fff; }
+  .user-nav__user-active {
+    display: none; }
+  .user-nav__user:focus > .user-nav__user-active {
+    display: block;
+    background-color: red; }
   @media only screen and (max-width: 34.375em) {
     .user-nav__user-name {
       display: none; } }
@@ -155,6 +160,8 @@ body {
     @media only screen and (max-width: 43.75em) {
       .side-nav__item {
         flex: 1; } }
+    .side-nav__item--active {
+      background-color: var(--color-primary); }
     .side-nav__item:not(:last-child) {
       margin-bottom: 1.5rem; }
       @media only screen and (max-width: 43.75em) {
@@ -221,14 +228,35 @@ body {
     .gallery {
       height: 20rem; } }
   .gallery__item {
-    margin: 0; }
+    margin: 0;
+    position: relative; }
   .gallery__photo {
     width: 100%;
-    display: block; }
+    display: block;
+    height: auto; }
     @media only screen and (max-width: 34.375em) {
       .gallery__photo {
         height: 100%;
         object-fit: cover; } }
+  .gallery__overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    width: 100%;
+    opacity: 0;
+    transition: all .3s ease;
+    background-color: rgba(235, 47, 100, 0.7); }
+  .gallery__overlay-text {
+    display: block;
+    font-size: 1.8rem; }
+  .gallery__item:hover .gallery__overlay {
+    opacity: 1; }
 
 .overview {
   display: flex;
@@ -462,9 +490,7 @@ body {
     animation: pulsate 1s infinite; }
 
 .container {
-  max-width: 75%;
-  width: 75%;
-  margin: 8rem auto;
+  width: 100%;
   background-color: var(--color-gray-light-1);
   box-shadow: var(--shadow); }
   @media only screen and (max-width: 68.75em) {
